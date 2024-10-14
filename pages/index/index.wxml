@@ -1,0 +1,6 @@
+<view class="container">
+  <text class="title">欢迎使用订饭小程序</text>
+  <text class="date">当前日期：{{currentDate}}</text>
+  <navigator url="/pages/merchant/merchant" class="btn">进入商户端</navigator>
+  <navigator url="/pages/admin/admin" class="btn">进入管理端</navigator>
+</view>

@@ -1,0 +1,34 @@
+<ActionBar title="订饭小程序"></ActionBar>
+
+<ScrollView>
+  <StackLayout class="p-4">
+    <Label [text]="'当前日期: ' + currentDate" class="h2 text-center"></Label>
+
+    <StackLayout class="form m-t-10">
+      <Label text="商户名称" class="label"></Label>
+      <TextField [(ngModel)]="merchantName" hint="输入商户名称" class="input"></TextField>
+
+      <Label text="订餐时间" class="label"></Label>
+      <SegmentedBar [(ngModel)]="orderTime" class="m-5">
+        <SegmentedBarItem title="上午"></SegmentedBarItem>
+        <SegmentedBarItem title="下午"></SegmentedBarItem>
+      </SegmentedBar>
+
+      <Label text="订餐份数" class="label"></Label>
+      <TextField [(ngModel)]="orderQuantity" hint="输入订餐份数" keyboardType="number" (ngModelChange)="calculateTotal()" class="input"></TextField>
+
+      <Label text="多订/少订份数" class="label"></Label>
+      <TextField [(ngModel)]="adjustQuantity" hint="输入多订/少订份数" keyboardType="number" (ngModelChange)="calculateTotal()" class="input"></TextField>
+
+      <Label [text]="'总计: ' + totalQuantity + ' 份'" class="h3 text-center m-t-10"></Label>
+
+      <Label text="今日买菜成本" class="label"></Label>
+      <TextField [(ngModel)]="groceryCost" hint="输入今日买菜成本" keyboardType="number" (ngModelChange)="calculateProfit()" class="input"></TextField>
+
+      <Label text="今日人工成本" class="label"></Label>
+      <TextField [(ngModel)]="laborCost" hint="输入今日人工成本" keyboardType="number" (ngModelChange)="calculateProfit()" class="input"></TextField>
+
+      <Label [text]="'今日盈利: ' + profit + ' 元'" class="h3 text-center m-t-10"></Label>
+    </StackLayout>
+  </StackLayout>
+</ScrollView>

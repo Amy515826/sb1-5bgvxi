@@ -1,0 +1,50 @@
+<view class="container">
+  <text class="title">商户端</text>
+  <text class="date">当前日期：{{currentDate}}</text>
+
+  <view class="form">
+    <view class="form-item">
+      <text class="label">商户名称：</text>
+      <input class="input" placeholder="输入商户名称" bindinput="onInputChange" data-field="merchantName" value="{{merchantName}}"/>
+    </view>
+
+    <view class="form-item">
+      <text class="label">订餐时间：</text>
+      <picker bindchange="onOrderTimeChange" value="{{orderTime}}" range="{{['上午', '下午']}}">
+        <view class="picker">{{orderTime}}</view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <text class="label">订餐份数：</text>
+      <input class="input" type="number" placeholder="输入订餐份数" bindinput="onInputChange" data-field="orderQuantity" value="{{orderQuantity}}"/>
+    </view>
+
+    <view class="form-item">
+      <text class="label">多订/少订份数：</text>
+      <input class="input" type="number" placeholder="输入多订/少订份数" bindinput="onInputChange" data-field="adjustQuantity" value="{{adjustQuantity}}"/>
+    </view>
+
+    <view class="form-item">
+      <text class="label">总计：</text>
+      <text class="value">{{totalQuantity}} 份</text>
+    </view>
+
+    <view class="form-item">
+      <text class="label">今日买菜成本：</text>
+      <input class="input" type="digit" placeholder="输入今日买菜成本" bindinput="onInputChange" data-field="groceryCost" value="{{groceryCost}}"/>
+    </view>
+
+    <view class="form-item">
+      <text class="label">今日人工成本：</text>
+      <input class="input" type="digit" placeholder="输入今日人工成本" bindinput="onInputChange" data-field="laborCost" value="{{laborCost}}"/>
+    </view>
+
+    <view class="form-item">
+      <text class="label">今日盈利：</text>
+      <text class="value">{{profit}} 元</text>
+    </view>
+  </view>
+
+  <button class="submit-btn" bindtap="submitOrder">提交订单</button>
+</view>

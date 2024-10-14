@@ -1,0 +1,23 @@
+.form {
+  margin-top: 20;
+}
+
+.input {
+  margin-bottom: 10;
+}
+
+.label {
+  margin-top: 10;
+  margin-bottom: 5;
+  font-weight: bold;
+}
+
+.h2 {
+  font-size: 20;
+  font-weight: bold;
+}
+
+.h3 {
+  font-size: 18;
+  font-weight: bold;
+}

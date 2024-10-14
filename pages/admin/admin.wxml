@@ -1,0 +1,24 @@
+<view class="container">
+  <text class="title">管理端</text>
+
+  <view class="summary">
+    <view class="summary-item">
+      <text class="label">总营收：</text>
+      <text class="value">{{totalRevenue}} 元</text>
+    </view>
+    <view class="summary-item">
+      <text class="label">总利润：</text>
+      <text class="value">{{totalProfit}} 元</text>
+    </view>
+  </view>
+
+  <view class="order-list">
+    <text class="subtitle">订单列表</text>
+    <view class="order-item" wx:for="{{orders}}" wx:key="id" bindtap="viewOrderDetail" data-id="{{item.id}}">
+      <text class="merchant-name">{{item.merchantName}}</text>
+      <text class="order-quantity">订餐数量：{{item.orderQuantity}}</text>
+      <text class="order-revenue">营收：{{item.revenue}} 元</text>
+      <text class="order-profit">利润：{{item.profit}} 元</text>
+    </view>
+  </view>
+</view>
